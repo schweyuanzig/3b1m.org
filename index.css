@@ -161,3 +161,25 @@ hr {
     color: rgb(39, 39, 39);
     font-weight: bold;
 }
+
+.copyB {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 10px;
+    border-color: rgb(54, 165, 54);
+}
+
+.copyimg {
+    size: 10px;
+    height: auto;
+    width: 50px;
+}
+
+#copytext {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    color: rgb(54, 165, 54);
+    font-size: 20px;
+}

@@ -13,8 +13,7 @@
 
     <div class="navigator">
         <div class="nav-links">
-            <a href="./index.html" class="home active1">Home</a>
-            <a href="./join.html" class="join">Join</a>
+            <a href="./index.html" class="home">Home</a>
         </div>
         <div class="contact">
             <a href="mailto:contact@3b1m.org" class="contactb">CONTACT</a>
@@ -38,6 +37,11 @@
             <h5>About</h5>
             <hr>
             <p>3blocks1modpack is an anarchy server founded in February 2023, with a world file that hasn't been reset since July 2023.</p>
+            <hr>
+            <div class="copyB" onclick="copyText()" style="cursor: pointer;">
+                <img src="./storage/img/copy.png" alt="copy icon" class="copyimg">
+                <p id="copytext">MC.3B1M.ORG</p>
+            </div>
         </div>
     </div>
 
@@ -53,6 +57,17 @@
             slides[currentIndex].classList.remove('active');
             currentIndex = (currentIndex + direction + slides.length) % slides.length;
             slides[currentIndex].classList.add('active');
+        }
+    </script>
+    <script>
+        function copyText() {
+        const text = document.getElementById("copytext").innerText;
+
+        navigator.clipboard.writeText(text).then(() => {
+        alert("Copied to clipboard!");
+        }).catch(err => {
+        console.error("Could'nt copy", err);
+        });
         }
     </script>
 </body>
