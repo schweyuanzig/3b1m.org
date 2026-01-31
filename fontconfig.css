@@ -1,0 +1,19 @@
+@font-face {
+    font-family: "Google";
+    src: url(./Storage/font/Google_Sans/GoogleSans-VariableFont_GRAD\,opsz\,wght.ttf);
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url(./Storage/font/Inter/Inter-VariableFont_opsz\,wght.ttf);
+}
+
+@font-face {
+    font-family: "Opens";
+    src: url(./Storage/font/Open_Sans/OpenSans-VariableFont_wdth\,wght.ttf);
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url(./Storage/font/Roboto/Roboto-VariableFont_wdth\,wght.ttf);
+}

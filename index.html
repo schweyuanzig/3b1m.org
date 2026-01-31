@@ -1,74 +1,68 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>3blocks1modpack | Home</title>
-    <link rel="stylesheet" href="./index.css">
-    <link rel="icon" href="./storage/img/3b1m.png">
-</head>
-<body>
-    <div class="text_M">
-        <h1>3BLOCKS1MODPACK</h1>
-    </div>
-
-    <div class="navigator">
-        <div class="nav-links">
-            <a href="./index.html" class="home">Home</a>
-        </div>
-        <div class="contact">
-            <a href="mailto:contact@3b1m.org" class="contactb">CONTACT</a>
-        </div>
-    </div>
-
-    <div class="contentcontainer">
-        <div class="slider-container">
-            <div class="slider">
-                <img src="./storage/img/1.png" class="slide active">
-                <img src="./storage/img/2.png" class="slide">
-                <img src="./storage/img/3.png" class="slide">
-                <img src="./storage/img/5.png" class="slide">
+<html lang="en">
+    <head>
+        <title>3blocks1modpack | Home</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="main.css" type="text/css">
+        <link rel="icon" type="image/png" href="./Storage/image/logo.png">
+        <link rel="stylesheet" type="text/css" href="fontconfig.css">
+    </head>
+    <body>
+        <header>
+            <h1>3blocks1modpack</h1>
+        </header>
+        <nav>
+            <div class="links">
+                <a href="index.html">Home</a>
             </div>
-            <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
-            <button class="next" onclick="changeSlide(1)">&#10095;</button>
-        </div>
-
-        <div class="lowtext">
-            <h3 class="aboutT">3blocks1modpack</h3>
-            <h5>About</h5>
-            <hr>
-            <p>3blocks1modpack is an anarchy server founded in February 2023, with a world file that hasn't been reset since July 2023.</p>
-            <hr>
-            <div class="copyB" onclick="copyText()" style="cursor: pointer;">
-                <img src="./storage/img/copy.png" alt="copy icon" class="copyimg">
-                <p id="copytext">MC.3B1M.ORG</p>
+            <div class="contact">
+                <a href="mailto:contact@3b1m.org">Contact</a>
             </div>
-        </div>
-    </div>
-
-        <div class="footer">
-        <p>© 3b1m 2023-2026</p>
-        <p>Version: 1.0.1</p>
-    </div>
-
-    <script>
-        let currentIndex = 0;
-        function changeSlide(direction) {
-            const slides = document.querySelectorAll('.slide');
-            slides[currentIndex].classList.remove('active');
-            currentIndex = (currentIndex + direction + slides.length) % slides.length;
-            slides[currentIndex].classList.add('active');
-        }
-    </script>
-    <script>
-        function copyText() {
-        const text = document.getElementById("copytext").innerText;
-
-        navigator.clipboard.writeText(text).then(() => {
-        alert("Copied to clipboard!");
-        }).catch(err => {
-        console.error("Could'nt copy", err);
-        });
-        }
-    </script>
-</body>
+        </nav>
+        <section class="main-container">
+            <article class="content">
+                <div class="slide_container">
+                    <img src="./Storage/image/1.png" alt="Slide 1">
+                    <img src="./Storage/image/2.png" alt="Slide 2">
+                    <img src="./Storage/image/3.png" alt="Slide 3">
+                    <img src="./Storage/image/4.png" alt="Slide 4">
+                </div>
+            </article>
+            <aside class="sidebar">
+                <hgroup>
+                    <h1 class="asidetext">3blocks1modpack</h1>
+                    <h2 class="subtext">About</h2>
+                </hgroup>
+                <hr>
+                <div class="desc">
+                    <p>3blocks1modpack is an anarchy server founded in <br>February 2023, with a world file that <br>hasn't been reset since July 2023.</p>
+                </div>
+                <hr>
+                <div class="buttoncopy" onclick="copyIP()" style="cursor: pointer;">
+                    <img src="./Storage/image/copy.png" alt="Copy Icon" title="Copy" class="copyimg">
+                    <p class="buttontext" id="server-ip">mc.3b1m.org</p>
+                </div>
+            </aside>
+        </section>
+        <footer>
+            <p>© 2023-2026 3b1m.org</p>
+            <p>Site Version: v1.0.2</p>
+            <p>Server Version: v1.1.3</p>
+            <address>
+                <p>Contact: <a href="mailto:contact@3b1m.org">contact@3b1m.org</a></p>
+            </address>
+        </footer>
+        <script>
+            function copyIP() {
+                const text = document.getElementById('server-ip').innerText;
+                navigator.clipboard.writeText(text).then(() => {
+                    const originalText = document.getElementById('server-ip').innerText;
+                    document.getElementById('server-ip').innerText = "Copied!";
+                    setTimeout(() => {
+                        document.getElementById('server-ip').innerText = originalText;
+                    }, 2000);
+                });
+            }
+        </script>
+    </body>
 </html>
